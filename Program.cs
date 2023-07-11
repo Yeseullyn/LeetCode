@@ -1,10 +1,17 @@
 ﻿using System;
 
-TwoSum twoSum = new TwoSum();
-    int[] nums = { 2, 7, 11, 15 };
-    int target = 9;
+namespace Leetcode
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TwoSum twoSum = new TwoSum();
 
-    int[] result = twoSum.FindTwoSumResult(nums, target);
+            int[] result = twoSum.FindTwoSumResult(new int[] { 2, 7, 15, 11 }, 26);
 
-    Console.WriteLine(result[0] + " " + result[1]);
-    Console.WriteLine(result);
+            if (result.Length > 0) Console.WriteLine(result[0] + " " + result[1]);
+
+        }
+    }
+}
