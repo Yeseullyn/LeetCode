@@ -19,7 +19,7 @@
  */
 
 var romanToInt = function (s) {
-    var result = 0;
+    let result = 0;
 
     // declare romanInteger object
     const romanInteger = {
@@ -34,17 +34,17 @@ var romanToInt = function (s) {
     
     // Find the current and next int value based on roman
     for (let i = 0; i < s.length; i++) {
-        const currentRoman = s[i];
-        const currentInt = romanInteger[currentRoman];
-        const nextRoman = s[i + 1]
-        const nextInt = romanInteger[nextRoman];
+        const currentSymbol = s[i];
+        const currentNumeral = romanInteger[currentSymbol];
+        const nextSymbol = s[i + 1]
+        const nextNumeral = romanInteger[nextSymbol];
 
         // If nextInt is greater than inextInt and currentInt,
         // add currentInt into result, else substracted
-        if (nextInt && currentInt < nextInt) {
-            result -= currentInt;
+        if (nextNumeral && currentNumeral < nextNumeral) {
+            result -= currentNumeral;
         } else {
-            result += currentInt;
+            result += currentNumeral;
         }
     }
     return result;
