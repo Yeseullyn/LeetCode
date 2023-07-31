@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock Scissor Paper Game!</title>
+    <style>
+      /* Style of results */
+      .game {
+        display: inline-block;
+        text-align: left;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .result-heading {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .result-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #cc0033;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rock Scissor Paper Game!</h1>
+    <div class="game">
+      <button onclick="startGame('rock')" id="rock">Rock</button>
+      <button onclick="startGame('scissor')" id="scissor">Scissor</button>
+      <button onclick="startGame('paper')" id="paper">Paper</button>
+
+      <div class="result">
+        <p class="result-heading">Result:</p>
+        <p class="result-value" id="result"></p>
+        <p class="result-heading">User:</p>
+        <p class="result-value" id="userSelected"></p>
+        <p class="result-heading">Computer:</p>
+        <p class="result-value" id="computerSelected"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    // User has options as Rock, Scissor and Paper
+    // Computer is selected random options
+    // Show result that user wins or loses or drawns
+
+    // When user click one of btn, this function starts
+    function startGame(userOption) {
+      // ComputerOption is selected randomly
+      const options = ["rock", "scissor", "paper"];
+      let computerOption = options[Math.floor(Math.random() * options.length)];
+
+      // Compare options between user and computer and shows result
+      if (userOption === computerOption) {
+        result = "Drawn!";
+      } else if (
+        (userOption === "rock" && computerOption === "scissor") ||
+        (userOption === "scissor" && computerOption === "paper") ||
+        (userOption === "paper" && computerOption === "rock")
+      ) {
+        result = "You win!";
+      } else {
+        result = "You lose.";
+      }
+
+      // Display result in HTML
+      document.getElementById("result").innerHTML = result;
+      document.getElementById("userSelected").innerHTML = userOption;
+      document.getElementById("computerSelected").innerHTML = computerOption;
+    }
+  </script>
+</html>
