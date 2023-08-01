@@ -8,7 +8,7 @@ public class Solution
 {
     public string LongestCommonPrefix(string[] strs)
     {
-        if (strs.Length == 0 || strs.Length == null)
+        if (strs.Length == 0 || strs == null)
             return "";
 
         // Declare strs[0] is commonPrefix
