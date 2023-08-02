@@ -28,7 +28,7 @@ public class SolutionSearchTwo
 {
     public int Search(int[] nums, int target)
     {
-        // Declare left and right which are indices index of nums array
+        // Declare left and right which are indices of nums array
         int left = 0;
         int right = nums.Length - 1;
 
